@@ -1,9 +1,9 @@
-import { useState } from "react"
+import { useMemo, useState } from "react"
 import LeftNav from "@/components/LeftNav"
 import Burguer from "@/components/Burguer"
 import GoTop from "@/components/GoTop"
 import Head from "next/head"
-import { ALL_ITEMS, DEFAULT_ITEM } from "@/components/LeftNav/components/Select"
+import { ALL_ITEMS } from "@/components/LeftNav/components/Select"
 import getComunidades from "../lib/getComunidades"
 const TITLE_ID = "TITLE_ID"
 import Comunidad from "@/components/Comunidad"
@@ -13,19 +13,27 @@ export default function Home({ posts = [] }) {
     departamento: ALL_ITEMS,
   })
   const [showNav, setShowNav] = useState(false)
-  const comunidades = posts.map(({ fields }) => {
-    const { departamento = "", name = "", description = "" } = fields
-    const text = `${name}${departamento}${description}`.toLowerCase()
-    const showAllDepas = [DEFAULT_ITEM, ALL_ITEMS].includes(
-      filters.departamento
-    )
-    const isCurrentDepa = showAllDepas || departamento === filters.departamento
-    const filterInText = text.includes(filters.input)
-    if (isCurrentDepa && filterInText) {
-      return <Comunidad {...fields} key={fields.name} />
+  const comunidades = useMemo(() => {
+    let size = 0
+    const items = posts.map(({ fields }) => {
+      const { departamento = "", name = "", description = "" } = fields
+      const text = `${name}${departamento}${description}`.toLowerCase()
+      const isCurrentDepa = [ALL_ITEMS, departamento].includes(
+        filters.departamento
+      )
+      const filterInText = text.includes(filters.input.toLowerCase())
+      if (isCurrentDepa && filterInText) {
+        ++size
+        return <Comunidad {...fields} key={fields.name} />
+      }
+      return null
+    })
+    return {
+      size,
+      items,
     }
-    return null
-  })
+  }, [filters])
+  const isVoid = comunidades.size === 0
   function updateCurrentFilters(newFilters) {
     setFilters((prev) => {
       return { ...prev, ...newFilters }
@@ -46,15 +54,18 @@ export default function Home({ posts = [] }) {
         <Burguer onClick={() => setShowNav(true)}>— Filtrar</Burguer>
       </div>
       <h1 id={TITLE_ID} className="text-4xl md:text-7xl font-bold uppercase">
-        🇸🇻 <Bullet /> Listado de comunidades dev en El Salvador
+        Listado de comunidades dev en El Salvador <Bullet /> 🇸🇻
       </h1>
-      <main
-        style={{ minHeight: "20rem" }}
-        className="flex flex-wrap -mx-2 mt-6 pb-20"
-      >
-        {comunidades}
+      <main className="flex flex-wrap -mx-2 mt-6 pb-20">
+        {comunidades.items}
+        <div
+          hidden={!isVoid}
+          className="w-full italic line-through h-56 flex items-center justify-center"
+        >
+          No hay resultados que mostrar 😢
+        </div>
       </main>
-      <footer className="border-t pb-10 py-4 flex space-x-2">
+      <footer className="border-t pb-20 py-4 flex flex-wrap space-x-2">
         <FooterLink href="https://twitter.com/d3portillo">
           D3Portillo
         </FooterLink>

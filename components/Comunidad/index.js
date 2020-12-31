@@ -64,10 +64,10 @@ export default function Comunidad({
           src={url}
           alt="..."
         />
-        <div className="p-4 max-h-48">
-          <div className="h-32 overflow-auto ">
+        <div className="p-4 lg:max-h-48">
+          <div className="lg:h-32 overflow-auto ">
             <div className="sticky w-full h-6 top-0 bg-gradient-to-b from-white to-transparent" />
-            <div className="sticky top-0 -mt-4">
+            <div className="sticky top-0 -mt-6 lg:-mt-4">
               <b className="text-lg bg-white pb-1 pr-2">{name}</b>
             </div>
             <p className="mb-2 pt-2">{description}</p>

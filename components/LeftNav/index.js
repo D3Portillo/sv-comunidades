@@ -24,7 +24,7 @@ export default function LeftNav({
               onInput={({ target }) => onFilter({ input: target.value })}
               placeholder="Digitar info"
               type="text"
-              className="border-2 text-xl px-4 py-2 border-black w-full"
+              className="outline-none border-2 text-xl px-4 py-2 border-black w-full"
             />
           </div>
           <div className="flex flex-col space-y-1">

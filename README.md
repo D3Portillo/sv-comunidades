@@ -1,6 +1,6 @@
 # sv-comunidades
 
-🇸🇻 Listado de comunidades de desarrollo en El Salvador
+Listado de comunidades de desarrollo en El Salvador 🇸🇻
 
 ## Listar comunidad al website
 
@@ -18,6 +18,8 @@ Este proyecto se armó gracias a NextJS + TailwindCSS y para DB se usa Airtable.
 
 ## Disclaimer
 
-El proyecto se ha hecho por pura diversión, si gustas que se agregue una feature puedes usar los issues de github para que discutamos sobre ello.
+El proyecto se ha hecho por pura diversión, si gustas que se agregue una feature puedes usar los issues de Github para que discutamos sobre ello.
 
-En El Salvador hay muchas comunidades de Desarrollo, te pido sigas, promuevas y compartas lo que hacen estas comunidades. Para terminar agradezco a **Ana Hernandez** por su colaboración en la busqueda de comunidades en el país y por motivarme a hacer este pequeño proyecto.
+Todo el código es disponible para el que lo quiera usar, también la información general de las comunidades listadas.
+
+En El Salvador hay muchas comunidades de Desarrollo, te pido sigas, promuevas y compartas lo que hacen estas comunidades. Para terminar agradezco a — **Ana Hernandez** por su colaboración en la busqueda de comunidades en el país, ayuda en general AwA. Y por motivarme a hacer este pequeño proyecto.
