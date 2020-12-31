@@ -1,6 +1,6 @@
 # sv-comunidades
 
-Listado de comunidades de desarrollo en El Salvador
+🇸🇻 Listado de comunidades de desarrollo en El Salvador
 
 ## Listar comunidad al website
 
@@ -8,7 +8,13 @@ Puedes listar comunidades acá > https://comunidades.now.sh/listar , ten en cuen
 
 ## Stack
 
-Este proyecto se armó gracias a NextJS y para DB se usa Airtable.
+Este proyecto se armó gracias a NextJS + TailwindCSS y para DB se usa Airtable.
+
+## Airtable
+
+- [Tabla de comunidades](https://airtable.com/shr06fg7n2oMIZcr6/tbl1t1YQUna6N5W7x)
+- [Formulario de registro](https://airtable.com/shrcnEGxn7Y0RNBB1)
+- [API](https://airtable.com/api)
 
 ## Disclaimer
 
