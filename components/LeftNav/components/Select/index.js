@@ -13,7 +13,7 @@ export default function Select({ onSelect = () => null }) {
   return (
     <div className="relative border-2 border-black h-12">
       <div className="flex space-x-2 px-4 py-2">
-        <div className="flex-grow text-xl">{selected}</div>
+        <div className="flex-grow text-xl truncate">{selected}</div>
         <div className="h-8 flex items-center justify-center">
           <FiChevronDown className="text-2xl" />
         </div>

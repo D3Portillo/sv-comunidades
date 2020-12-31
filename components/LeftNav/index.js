@@ -28,7 +28,7 @@ export default function LeftNav({
             />
           </div>
           <div className="flex flex-col space-y-1">
-            <div>Seleccionar Departamento</div>
+            <div>Seleccionar departamento</div>
             <Select onSelect={(departamento) => onFilter({ departamento })} />
           </div>
         </div>

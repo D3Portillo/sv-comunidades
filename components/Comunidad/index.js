@@ -1,11 +1,10 @@
 import { AiOutlineInstagram } from "react-icons/ai"
 import { FiTwitter, FiGithub, FiFacebook } from "react-icons/fi"
+import { FaDiscord } from "react-icons/fa"
 import { useState } from "react"
 import ALink from "./components/ALink"
 import Website from "./components/Website"
-function formatUsername(username = "") {
-  return username.replace("@", "")
-}
+
 export default function Comunidad({
   description,
   logo: {
@@ -17,48 +16,44 @@ export default function Comunidad({
   instagram,
   twitter,
   github,
+  discord,
 }) {
   const [renders] = useState(() => ({
     twitter: twitter && (
-      <ALink
-        base="twitter.com"
-        title="Ir al Twitter"
-        user={formatUsername(twitter)}
-      >
+      <ALink base="twitter" user={twitter}>
         <FiTwitter className="text-xl" />
       </ALink>
     ),
     facebook: facebook && (
-      <ALink
-        base="facebook.com"
-        title="Ir al Facebook"
-        user={formatUsername(facebook)}
-      >
+      <ALink base="facebook" user={facebook}>
         <FiFacebook className="text-xl" />
       </ALink>
     ),
     instagram: instagram && (
-      <ALink
-        base="instagram.com"
-        title="Ir al Instagram"
-        user={formatUsername(instagram)}
-      >
+      <ALink base="instagram" user={instagram}>
         <AiOutlineInstagram className="text-2xl" />
       </ALink>
     ),
     github: github && (
-      <ALink
-        base="github.com"
-        title="Ir a GitHub"
-        user={formatUsername(github)}
-      >
+      <ALink base="github" user={github}>
         <FiGithub className="text-xl" />
       </ALink>
+    ),
+    discord: discord && (
+      <a
+        title="Ir a Discord"
+        className="cursor-pointer transform hover:-translate-y-px"
+        href={discord}
+        target="_blank"
+        rel="noopener noreferer"
+      >
+        <FaDiscord className="text-xl" />
+      </a>
     ),
   }))
   return (
     <div className="w-full xl:max-w-xl p-2">
-      <div className="border hover:border-black flex">
+      <div className="border hover:border-black flex pt-1 lg:pt-0">
         <img
           className="w-14 h-14 lg:w-48 lg:h-48 object-cover"
           src={url}
@@ -78,6 +73,7 @@ export default function Comunidad({
             {renders.instagram}
             {renders.twitter}
             {renders.github}
+            {renders.discord}
           </div>
         </div>
       </div>
