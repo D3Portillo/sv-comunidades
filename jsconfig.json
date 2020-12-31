@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/asset/*": ["assets/*"],
+      "@/components/*": ["components/*"]
+    }
+  },
+  "exclude": ["node_modules", ".next", ".vercel"]
+}
