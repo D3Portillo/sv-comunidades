@@ -6,6 +6,10 @@ import Head from "next/head"
 import { ALL_ITEMS } from "@/components/LeftNav/components/Select"
 import getComunidades from "../lib/getComunidades"
 const TITLE_ID = "TITLE_ID"
+const metas = {
+  title: "Comunidades Dev — SV",
+  description: "Listado de comunidades de desarrollo en El Salvador 🇸🇻",
+}
 import Comunidad from "@/components/Comunidad"
 export default function Home({ posts = [] }) {
   const [filters, setFilters] = useState({
@@ -42,8 +46,25 @@ export default function Home({ posts = [] }) {
   return (
     <div className="relative mx-auto px-4 py-5 lg:p-12 lg:pr-24">
       <Head>
-        <title>Comunidades Dev — SV</title>
+        <title>{metas.title}</title>
         <link type="image/png" rel="shortcut icon" href="favicon.png" />
+        {/* Twitter */}
+        <meta name="twitter:card" content={metas.description} key="twcard" />
+        <meta name="twitter:creator" content="d3portillo" key="twhandle" />
+        {/* Open Graph */}
+        <meta
+          property="og:url"
+          content="https://comunidades.now.sh"
+          key="ogurl"
+        />
+        <meta property="og:image" content="/seo.png" key="ogimage" />
+        <meta property="og:site_name" content="comunidades" key="ogsitename" />
+        <meta property="og:title" content={metas.title} key="ogtitle" />
+        <meta
+          property="og:description"
+          content={metas.description}
+          key="ogdesc"
+        />
       </Head>
       <LeftNav
         onFilter={updateCurrentFilters}
@@ -92,9 +113,7 @@ function FooterLink({ children = null, href = "#" }) {
     </a>
   )
 }
-function Bullet() {
-  return <span>・</span>
-}
+const Bullet = () => <span>・</span>
 export async function getStaticProps() {
   const posts = await getComunidades()
   return {
