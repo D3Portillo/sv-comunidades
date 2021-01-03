@@ -5,3 +5,11 @@
 [hidden=""] {
   @apply hidden;
 }
+
+.CommunityContent a {
+  @apply underline text-blue-500 hover:text-blue-600;
+}
+
+.CommunityContent p {
+  @apply mt-2;
+}

@@ -60,14 +60,17 @@ export default function Comunidad({
           alt="..."
         />
         <div className="p-4 lg:max-h-48">
-          <div className="lg:h-32 overflow-auto ">
+          <CommunityContent>
             <div className="sticky w-full h-6 top-0 bg-gradient-to-b from-white to-transparent" />
             <div className="sticky top-0 -mt-6 lg:-mt-4">
               <b className="text-lg bg-white pb-1 pr-2">{name}</b>
             </div>
-            <p className="mb-2 pt-2">{description}</p>
+            <div
+              className="mb-2 pt-2"
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
             <Website url={website} />
-          </div>
+          </CommunityContent>
           <div className="flex justify-end lg:justify-start space-x-3 items-center mt-3">
             {renders.facebook}
             {renders.instagram}
@@ -78,5 +81,11 @@ export default function Comunidad({
         </div>
       </div>
     </div>
+  )
+}
+
+function CommunityContent({ children = null }) {
+  return (
+    <div className="lg:h-32 overflow-auto CommunityContent">{children}</div>
   )
 }
