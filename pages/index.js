@@ -48,23 +48,16 @@ export default function Home({ posts = [] }) {
       <Head>
         <title>{metas.title}</title>
         <link type="image/png" rel="shortcut icon" href="favicon.png" />
+        <meta name="description" content={metas.description} />
         {/* Twitter */}
-        <meta name="twitter:card" content={metas.description} key="twcard" />
-        <meta name="twitter:creator" content="d3portillo" key="twhandle" />
+        <meta name="twitter:card" content={metas.description} />
+        <meta name="twitter:creator" content="d3portillo" />
         {/* Open Graph */}
-        <meta
-          property="og:url"
-          content="https://comunidades.now.sh"
-          key="ogurl"
-        />
-        <meta property="og:image" content="/seo.png" key="ogimage" />
-        <meta property="og:site_name" content="comunidades" key="ogsitename" />
-        <meta property="og:title" content={metas.title} key="ogtitle" />
-        <meta
-          property="og:description"
-          content={metas.description}
-          key="ogdesc"
-        />
+        <meta property="og:url" content="https://comunidades.now.sh" />
+        <meta property="og:image" content="/seo.png" />
+        <meta property="og:site_name" content="comunidades" />
+        <meta property="og:title" content={metas.title} />
+        <meta property="og:description" content={metas.description} />
       </Head>
       <LeftNav
         onFilter={updateCurrentFilters}
