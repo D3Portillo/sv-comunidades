@@ -7,7 +7,7 @@
 }
 
 .CommunityContent a {
-  @apply underline text-blue-500 hover:text-blue-600;
+  @apply underline text-blue-500 hover:text-blue-600 break-all;
 }
 
 .CommunityContent p {

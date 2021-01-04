@@ -4,12 +4,10 @@ import { FaDiscord } from "react-icons/fa"
 import { useState } from "react"
 import ALink from "./components/ALink"
 import Website from "./components/Website"
-
+import Image from "./components/Image"
 export default function Comunidad({
   description,
-  logo: {
-    0: { url },
-  },
+  logo,
   name,
   website,
   facebook,
@@ -54,19 +52,20 @@ export default function Comunidad({
   return (
     <div className="w-full xl:max-w-xl p-2">
       <div className="border hover:border-black flex pt-1 lg:pt-0">
-        <img
-          className="w-14 h-14 lg:w-48 lg:h-48 object-cover"
-          src={url}
-          alt="..."
-        />
+        <Image src={logo.large} alt={logo.small} />
         <div className="p-4 lg:max-h-48">
           <CommunityContent>
-            <div className="sticky w-full h-6 top-0 bg-gradient-to-b from-white to-transparent" />
-            <div className="sticky top-0 -mt-6 lg:-mt-4">
-              <b className="text-lg bg-white pb-1 pr-2">{name}</b>
+            <div className="sticky h-8 top-0 bg-gradient-to-b from-white to-transparent" />
+            <div className="sticky top-0 flex -mt-9 lg:-mt-6">
+              <b
+                style={{ boxShadow: "0 1px 2px 0 white" }}
+                className="text-lg bg-white pr-1 pb-px"
+              >
+                {name}
+              </b>
             </div>
             <div
-              className="mb-2 pt-2"
+              className="mb-2 mt-2"
               dangerouslySetInnerHTML={{ __html: description }}
             />
             <Website url={website} />

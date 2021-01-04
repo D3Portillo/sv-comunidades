@@ -15,9 +15,10 @@
   },
   "devDependencies": {
     "airtable": "^0.10.1",
-    "next-mdx-remote": "^2.0.1",
     "autoprefixer": "^10.1.0",
+    "next-mdx-remote": "^2.0.1",
     "postcss": "^8.2.2",
+    "remark-truncate-links": "^1.0.3",
     "tailwindcss": "^2.0.2"
   }
 }
