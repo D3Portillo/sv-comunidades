@@ -53,10 +53,10 @@ export default function Comunidad({
     <div className="w-full xl:max-w-xl p-2">
       <div className="border hover:border-black flex pt-1 lg:pt-0">
         <Image src={logo.large} alt={logo.small} />
-        <div className="p-4 lg:max-h-48">
+        <div className="p-4 lg:max-h-48 flex-1">
           <CommunityContent>
-            <div className="sticky h-8 top-0 bg-gradient-to-b from-white to-transparent" />
-            <div className="sticky top-0 flex -mt-9 lg:-mt-6">
+            <div className="sticky h-7 top-0 bg-gradient-to-b from-white to-transparent" />
+            <div className="sticky top-0 flex -mt-7 lg:-mt-6">
               <b
                 style={{ boxShadow: "0 1px 2px 0 white" }}
                 className="text-lg bg-white pr-1 pb-px"
