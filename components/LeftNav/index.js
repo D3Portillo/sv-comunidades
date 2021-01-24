@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import Burguer from "../Burguer"
-import Select from "./components/Select"
+import Select from "./Select"
 export default function LeftNav({
   onFilter = () => null,
   isOpen = false,

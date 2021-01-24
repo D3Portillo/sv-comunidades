@@ -2,9 +2,11 @@ import { AiOutlineInstagram } from "react-icons/ai"
 import { FiTwitter, FiGithub, FiFacebook } from "react-icons/fi"
 import { FaDiscord } from "react-icons/fa"
 import { useState } from "react"
-import ALink from "./components/ALink"
-import Website from "./components/Website"
-import Image from "./components/Image"
+import ALink from "./ALink"
+import Website from "./Website"
+import Image from "./Image"
+import { link } from "@/shared/props"
+
 export default function Comunidad({
   description,
   logo,
@@ -39,11 +41,10 @@ export default function Comunidad({
     ),
     discord: discord && (
       <a
+        {...link._blank}
         title="Ir a Discord"
         className="cursor-pointer transform hover:-translate-y-px"
         href={discord}
-        target="_blank"
-        rel="noopener noreferer"
       >
         <FaDiscord className="text-xl" />
       </a>
@@ -65,7 +66,7 @@ export default function Comunidad({
               </b>
             </div>
             <div
-              className="mb-2 mt-2"
+              className="my-2 pb-1"
               dangerouslySetInnerHTML={{ __html: description }}
             />
             <Website url={website} />

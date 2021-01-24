@@ -1,3 +1,4 @@
+import { link } from "@/shared/props"
 const format = (user = "") => user.replace("@", "")
 export default function ALink({ base = "", user = "", children = null }) {
   const url = `https://${base}.com/${format(user)}`
@@ -5,10 +6,9 @@ export default function ALink({ base = "", user = "", children = null }) {
   return (
     <a
       href={url}
-      target="_blank"
-      rel="noopener noreferer"
       title={`Ir a ${capitalized}`}
       className="transform hover:-translate-y-px -mr-1"
+      {...link._blank}
     >
       {children}
     </a>

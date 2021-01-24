@@ -3,7 +3,8 @@
     "baseUrl": ".",
     "paths": {
       "@/asset/*": ["assets/*"],
-      "@/components/*": ["components/*"]
+      "@/components/*": ["components/*"],
+      "@/shared/*": ["shared/*"]
     }
   },
   "exclude": ["node_modules", ".next", ".vercel"]

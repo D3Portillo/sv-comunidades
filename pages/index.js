@@ -3,14 +3,15 @@ import LeftNav from "@/components/LeftNav"
 import Burguer from "@/components/Burguer"
 import GoTop from "@/components/GoTop"
 import Head from "next/head"
-import { ALL_ITEMS } from "@/components/LeftNav/components/Select"
+import { link } from "@/shared/props"
+import { ALL_ITEMS } from "@/components/LeftNav/Select"
 import getComunidades from "../lib/getComunidades"
+import Comunidad from "@/components/Comunidad"
 const TITLE_ID = "TITLE_ID"
 const metas = {
   title: "Comunidades Dev — SV",
   description: "Listado de comunidades de desarrollo en El Salvador 🇸🇻",
 }
-import Comunidad from "@/components/Comunidad"
 export default function Home({ posts = [] }) {
   const [filters, setFilters] = useState({
     input: "",
@@ -49,10 +50,8 @@ export default function Home({ posts = [] }) {
         <title>{metas.title}</title>
         <link type="image/png" rel="shortcut icon" href="favicon.png" />
         <meta name="description" content={metas.description} />
-        {/* Twitter */}
         <meta name="twitter:card" content={metas.description} />
         <meta name="twitter:creator" content="d3portillo" />
-        {/* Open Graph */}
         <meta property="og:url" content="https://comunidades.now.sh" />
         <meta property="og:image" content="/seo.png" />
         <meta property="og:site_name" content="comunidades" />
@@ -96,12 +95,7 @@ export default function Home({ posts = [] }) {
 }
 function FooterLink({ children = null, href = "#" }) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferer"
-      className="hover:underline"
-    >
+    <a href={href} {...link._blank} className="hover:underline">
       {children}
     </a>
   )
@@ -112,7 +106,7 @@ export async function getStaticProps() {
   return {
     props: {
       posts,
-      revalidate: 1,
+      revalidate: 5,
     },
   }
 }
